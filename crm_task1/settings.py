@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'crm',
+    'apps.blog',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'crm.urls'
+ROOT_URLCONF = 'crm_task1.urls'
 
 TEMPLATES = [
     {
@@ -75,12 +75,12 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS =[
+AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-WSGI_APPLICATION = 'crm.wsgi.application'
+WSGI_APPLICATION = 'crm_task1.wsgi.application'
 
 
 # Database
