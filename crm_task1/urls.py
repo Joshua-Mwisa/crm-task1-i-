@@ -1,7 +1,7 @@
-"""CRM URL Configuration
+"""crm_task1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView  
+from django.views.generic import TemplateView
+from apps.blog.views import BlogView, LoginView
+
 
 urlpatterns = [
-    path('',TemplateView.as_view(template_name="blog/windex.html")),
+    path('', BlogView.as_view(), name='blog'),
+    path('login/', LoginView.as_view(), name='login'),
+
+
+    # path('', TemplateView.as_view(template_name="windex.html")),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]
+
